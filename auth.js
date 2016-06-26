@@ -26,7 +26,7 @@ passport.use(new GoogleStrategy({
       if (id) {
         return done(null, profile);
       } else {
-        db.createUser(profile.id).then(function(id) {
+        db.createUser(profile).then(function(id) {
           return done(null, profile);
         });
       }
