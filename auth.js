@@ -19,7 +19,8 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://127.0.0.1:3000/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log(profile);
+    // console.log(profile);
+
     // Query the database to find user record associated with this
     // google profile, then pass that object to done callback
     db.findUserById(profile.id).then(function(id) {
@@ -35,5 +36,16 @@ passport.use(new GoogleStrategy({
 ));
 
 module.exports = {
-  passport: passport
+
+  passport: passport,
+
+  // Route middleware to ensure user is authenticated.
+  ensureAuthenticated: function (request, response, next) {
+    if (request.isAuthenticated()) {
+      return next();
+    }
+    response.redirect('/login');
+  }
+
+
 };
