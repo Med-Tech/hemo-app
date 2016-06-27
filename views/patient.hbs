@@ -1,5 +1,88 @@
+<header>
+  <a href="/logout" class='button'>Log Out</a>
+</header>
 <h2>Hello, {{ googleUser.displayName }}.</h2>
 {{#each googleUser.photos}}<img src="{{ value }}" alt="userPhoto">{{/each}}
+<div class='container'>
+  <div class='row patientInfo'>
+    <div class='col-sm-6'>
+      <ul>
+        <li>Birthday: 10/11/1987</li>
+        <li>Phone Number: (515)229-1737</li>
+        <li>Email: peterjostiguy@gmail.com</li>
+      </ul>
+    </div>
+    <div class='col-sm-6'>
+      <ul>
+        <li>Diagnosis: Hemophilia A</li>
+        <li>Current Medicine: Advate</li>
+      </ul>
+    </div>
+  </div>
+  <button>Add Bleeding Event</button>
+  <div class='row'>
+    <div class='col-sm-12'>
+      <ul class='bleedList'>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+        <li class='bleed'>
+          <p>Date</p>
+          <p>Description</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
 <!-- {{#each googleUser.emails}} {{ value }} {{/each}} -->
-<a href="/patient" class='button'>Home</a> |
-<a href="/logout" class='button'>Log Out</a>
