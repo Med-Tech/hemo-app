@@ -1,0 +1,10 @@
+<h3>{{user.displayName}}, please fill out remaining information! Thank you.</h3>
+
+<form method="POST" action="/profile">
+  <label>Are you a nurse or a patient?
+    <input type="radio" name="permission" value="true"> Nurse<br>
+    <input type="radio" name="permission" value="false">Patient<br>
+    <input type="hidden" name="userId" value="{{user.id}}">
+  </label>
+<input type="submit" class="button" value="Submit">
+</form>
