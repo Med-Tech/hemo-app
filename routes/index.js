@@ -14,11 +14,6 @@ router.get('/login', function(request, response) {
   response.render('login', { user: request.user });
 });
 
-// GET home page, must be authenticated to view
-router.get('/home', auth.ensureAuthenticated, function(request, response, next) {
-  response.render('home', { user: request.user });
-});
-
 // GET profile page to fill out other data
 router.get('/profile', auth.ensureAuthenticated, function(request, response, next) {
   response.render('profile', { user: request.user });

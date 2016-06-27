@@ -1,1 +1,5 @@
-PATIENT HOME
+<h2>Hello, {{ googleUser.displayName }}.</h2>
+{{#each googleUser.photos}}<img src="{{ value }}" alt="userPhoto">{{/each}}
+<!-- {{#each googleUser.emails}} {{ value }} {{/each}} -->
+<a href="/patient" class='button'>Home</a> |
+<a href="/logout" class='button'>Log Out</a>
