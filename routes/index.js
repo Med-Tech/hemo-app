@@ -39,8 +39,10 @@ router.get('/auth/google/callback',
     db.findUserByUserId(request.user).then(function(user) {
       if (user[0].permission === null) {
         response.redirect('/profile');
-      } else {
-        response.redirect('/home');
+      } else if (user[0].permission === true){
+        response.redirect('/nurse');
+      } else if (user[0].permission === false) {
+        response.redirect('/patient');
       }
     });
   });
@@ -48,7 +50,11 @@ router.get('/auth/google/callback',
 
 router.post('/profile', auth.ensureAuthenticated, function(request, response, next) {
   db.insertAdditionalInfo(request.body).then(function() {
-    response.redirect('/home');
+    if (request.body.permission === true) {
+      response.redirect('/nurse');
+    } else {
+      response.redirect('/patient');
+    }
   });
 });
 
