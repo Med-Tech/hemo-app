@@ -10,7 +10,6 @@ exports.up = function(knex, Promise) {
     table.integer('diagnosis_id').references('diagnosis.id');
     table.integer('medicine_id').references('medicine.id');
     table.string('telephone');
-    table.string('address');
   });
 };
 
