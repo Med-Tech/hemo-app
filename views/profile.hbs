@@ -2,11 +2,11 @@
 
 <form method="POST" action="/profile">
   <span class='profile'>
-    <label >Birthdate</label>
+    <label >Birthdate: </label>
     <input type='date' name='birthday'value = 'birthday'/>
   </span>
   <span class='profile'>
-    <label>Email Address</label>
+    <label>Email Address: </label>
     <input type='text' name='email'value = 'email'/>
   </span>
   <span class = 'userTypeLabel'>
@@ -23,14 +23,14 @@
     </span>
     <input type="hidden" name="userId" value="{{user.id}}">
   </label>
-  <span class = 'profile'>Diagnosis
+  <span class = 'profile'>Diagnosis:
         <select name="diagnosis">
           <option value="option1">Option1</option>
           <option value="option2">Option2</option>
           <option value="option3">Option3</option>
         </select>
         </span>
-        <span class= 'profile'>Medicine
+        <span class= 'profile'>Medicine:
           <select name="diagnosis">
             <option value="med1">Med1</option>
             <option value="med2">Med2</option>
