@@ -1,41 +1,51 @@
 <h3>{{user.displayName}}, please fill out remaining information! Thank you.</h3>
 
 <form method="POST" action="/profile">
+  <!-- Birthday -->
   <span class='profile'>
-    <label >Birthdate: </label>
-    <input type='date' name='birthday'value = 'birthday'/>
+    <label for='birthdate'>Birthdate: </label>
+    <input type='date' name='birthday' id='birthday'>
   </span>
+
+  <!-- Nurst/Patient -->
   <span class='profile'>
-    <label>Email Address: </label>
-    <input type='text' name='email'value = 'email'/>
-  </span>
-  <span class = 'userTypeLabel'>
-  <label >Are you a nurse or a patient?<br>
-  </span>
-    <span id = 'userType'class='profile'>
+    <label for='userType'>Are you a nurse or a patient?</label>
       Nurse:
       <input type="radio" name="permission" value="true">
-
-    </span>
-    <span id = 'userType' class='profile'>
       Patient:
       <input type="radio" name="permission" value="false">
-    </span>
-    <input type="hidden" name="userId" value="{{user.id}}">
-  </label>
-  <span class = 'profile'>Diagnosis:
-        <select name="diagnosis">
-          <option value="option1">Option1</option>
-          <option value="option2">Option2</option>
-          <option value="option3">Option3</option>
-        </select>
-        </span>
-        <span class= 'profile'>Medicine:
-          <select name="diagnosis">
-            <option value="med1">Med1</option>
-            <option value="med2">Med2</option>
-            <option value="med3">Med3</option>
-          </select>
-              </span>
-<input type="submit" class="button" value="Submit">
+  </span>
+
+  <!-- Hidden user.id -->
+  <input type="hidden" name="userId" value="{{user.id}}">
+
+  <!-- Diagnosis -->
+  <span class='profile'>Diagnosis:
+    <select name="diagnosis">
+      <option value="1">Hemophelia A</option>
+      <option value="2">Hemophelia B</option>
+      <option value="3">Von Willebrand</option>
+      <option value="4">Rare Bleeding Disorder</option>
+    </select>
+  </span>
+
+  <!-- Medicine -->
+  <span class='profile'>Medicine:
+    <select name="medicine">
+      <option value="1">Stimate</option>
+      <option value="2">Amicar</option>
+      <option value="3">Advate</option>
+      <option value="4">Rixubus</option>
+      <option value="5">Elcotate</option>
+    </select>
+  </span>
+
+  <!-- Telephone -->
+  <span class='profile'>
+    <input type="text" name="telephone" placeholder="123-444-5555">
+  </span>
+
+  <!-- Submit -->
+  <input type="submit" class="button" value="Submit">
+
 </form>
