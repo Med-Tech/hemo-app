@@ -6,3 +6,27 @@ body {
 a {
   color: #00B7FF;
 }
+/* Profile Form Page*/
+form {
+  font-size: 16px;
+}
+
+#userType {
+  padding: 1px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+.profile {
+  display: block;
+  padding: 10px;
+}
+
+.button {
+width: 200px;
+font-size: 18px;
+}
+.userTypeLabel {
+  padding-left: 10px;
+  padding-bottom: 20px;
+  /*font-size: 18px;*/
+}
