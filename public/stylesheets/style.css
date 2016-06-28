@@ -78,3 +78,11 @@ ul {
 #contact {
   min-height: 500px;
 }
+
+.patientinfo {
+  display: none;
+}
+
+.providerpassword {
+  display: none;
+}
