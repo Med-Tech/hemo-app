@@ -86,3 +86,7 @@ ul {
 .providerpassword {
   display: none;
 }
+
+#action_needed {
+  display: none;
+}
