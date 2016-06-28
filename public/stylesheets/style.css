@@ -44,6 +44,10 @@ header {
   background-color: maroon;
 }
 
+.modal-content {
+
+}
+
 .bleed {
   display:flex;
   justify-content: space-between;
@@ -64,6 +68,9 @@ ul {
   min-height: 500px;
 }
 
+.modal-backdrop {
+  z-index: -1;
+}
 #about {
   min-height: 500px;
 }
