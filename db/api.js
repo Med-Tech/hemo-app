@@ -44,6 +44,13 @@ module.exports = {
                 action_needed: body.action_needed,
                 users_id: body.users_id
               });
+  },
+
+  findBleedIncident: function(user_id) {
+    return knex('bleed').select().where({ users_id: user_id })
+      .then(function(bleed) {
+        return bleed;
+      });
   }
 
 };

@@ -9,11 +9,29 @@ require('dotenv').load();
 // GET patient home page, must be authenticated to view
 router.get('/', auth.ensureAuthenticated, auth.isPatient, function(request, response, next) {
   db.findUserById(request.user.id).then(function(user) {
-    response.render('patient', { dbUser: user,
-                                 googleUser: request.user
-                               });
+    db.findBleedIncident(user.user_id).then(function(bleed) {
+      response.render('patient', { dbUser: user,
+                                   googleUser: request.user,
+                                   bleed: bleed
+                                 });
+    });
   });
 });
+
+// *********Same results as above but remains ability to stay flat instaed of down a callback hell
+
+// router.get('/', auth.ensureAuthenticated, auth.isPatient, function(request, response, next) {
+//   db.findUserById(request.user.id).then(function(user) {
+//     return db.findBleedIncident(user.user_id).then(function (bleed) {
+//       return { user: user, bleed: bleed };
+//     });
+//   }).then(function(data) {
+//     response.render('patient', { dbUser: data.user,
+//                                  googleUser: request.user,
+//                                  bleed: data.bleed
+//                                });
+//   });
+// });
 
 
 // POST to /create route to add bleed event
