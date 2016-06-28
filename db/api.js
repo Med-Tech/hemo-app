@@ -3,7 +3,7 @@ var knex = require('./knex');
 module.exports = {
 
   findUserById: function(profileId) {
-    return knex('users').select(['medicine.name as medicine', 'diagnosis.name as diagnosis', '*'])
+    return knex('users').select(['users.id as user_id', 'medicine.name as medicine', 'diagnosis.name as diagnosis', '*'])
       .where({ googleId: profileId }).first()
         .join('medicine', 'medicine_id', 'medicine.id')
         .join('diagnosis', 'diagnosis_id', 'diagnosis.id');
@@ -31,6 +31,19 @@ module.exports = {
                   medicine_id: body.medicine,
                   telephone: body.telephone.replace(/[^0-9]/g, "")
                 });
+  },
+
+  insertBleedEvent: function(body) {
+    return knex('bleed')
+      .insert({ event_date: body.event_date,
+                description: body.description,
+                physical_location: body.physical_location,
+                medicine_id: body.medicine,
+                dose: body.dose,
+                prioritize: body.prioritize,
+                action_needed: body.action_needed,
+                users_id: body.users_id
+              });
   }
 
 };

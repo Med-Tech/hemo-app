@@ -14,4 +14,12 @@ router.get('/', auth.ensureAuthenticated, auth.isPatient, function(request, resp
 });
 
 
+// POST to /create route to add bleed event
+router.post('/create', function(request, response, next) {
+  console.log(request.body);
+  db.insertBleedEvent(request.body).then(function() {
+    response.redirect('/');
+  });
+});
+
 module.exports = router;
