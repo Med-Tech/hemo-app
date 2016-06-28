@@ -5,11 +5,11 @@ var db = require('../db/api');
 
 
 // GET patient home page, must be authenticated to view
-router.get('/', auth.ensureAuthenticated, function(request, response, next) {
+router.get('/', auth.ensureAuthenticated, auth.isNurse, function(request, response, next) {
   db.findUserById(request.user.id).then(function(user) {
-    response.render('patient', { dbUser: user,
-                                 googleUser: request.user
-                               });
+    response.render('nurse', { dbUser: user,
+                               googleUser: request.user
+                             });
   });
 });
 

@@ -46,7 +46,26 @@ module.exports = {
       return next();
     }
     response.redirect('/login');
-  }
+  },
 
+  isNurse: function(request, response, next) {
+    db.findUserById(request.user.id).then(function(user) {
+      if (user.permission === true) {
+        next();
+      } else {
+        response.redirect('/patient');
+      }
+    });
+  },
+
+  isPatient: function(request, response, next) {
+    db.findUserById(request.user.id).then(function(user) {
+      if (user.permission === false) {
+        next();
+      } else {
+        response.redirect('/nurse');
+      }
+    });
+  }
 
 };

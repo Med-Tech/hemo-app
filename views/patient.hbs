@@ -1,88 +1,127 @@
-<header>
-  <a href="/logout" class='button'>Log Out</a>
-</header>
-<h2>Hello, {{ googleUser.displayName }}.</h2>
-{{#each googleUser.photos}}<img src="{{ value }}" alt="userPhoto">{{/each}}
-<div class='container'>
-  <div class='row patientInfo'>
-    <div class='col-sm-6'>
-      <ul>
-        <li>Birthday: 10/11/1987</li>
-        <li>Phone Number: (515)229-1737</li>
-        <li>Email: peterjostiguy@gmail.com</li>
-      </ul>
-    </div>
-    <div class='col-sm-6'>
-      <ul>
-        <li>Diagnosis: Hemophilia A</li>
-        <li>Current Medicine: Advate</li>
-      </ul>
-    </div>
-  </div>
-  <button>Add Bleeding Event</button>
-  <div class='row'>
-    <div class='col-sm-12'>
-      <ul class='bleedList'>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-        <li class='bleed'>
-          <p>Date</p>
-          <p>Description</p>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header page-scroll">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#page-top">Med-Tech</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+								<li class="hidden">
+										<a href="#page-top"></a>
+								</li>
+								<li class="page-scroll">
+										<a href="#portfolio">Portfolio</a>
+								</li>
+								<li class="page-scroll">
+										<a href="/logout" class='button'>Log Out</a>
+								</li>
+						</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+</nav>
+<section id="portfolio">
+		<div class="container">
+				<div class="row">
+					{{#each googleUser.photos}}<img src="{{ value }}" alt="userPhoto">{{/each}}
+					<br><br>
+          <h2>Hello, {{ googleUser.displayName }}.</h2>
+					<br><br>
+          <div class='container'>
+            <div class='row patientInfo'>
+              <div class='col-sm-6'>
+                <ul>
+                  <li>Birthday: {{dbUser.birthday}}</li>
+                  <li>Phone Number: {{dbUser.telephone}}</li>
+                  <li>Email: {{dbUser.email}}</li>
+                </ul>
+              </div>
+              <div class='col-sm-6'>
+                <ul>
+                  <li>Diagnosis: {{dbUser.diagnosis}}</li>
+                  <li>Current Medicine: {{dbUser.medicine}}</li>
+                </ul>
+              </div>
+            </div>
+						<br><br><br>
+            <button>Add Bleeding Event</button>
+            <div class='row'>
+              <div class='col-sm-12'>
+                <ul class='bleedList'>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                  <li class='bleed'>
+                    <p>Date</p>
+                    <p>Description</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+				</div>
+      </div>
+    </section>
 
 
 <!-- {{#each googleUser.emails}} {{ value }} {{/each}} -->

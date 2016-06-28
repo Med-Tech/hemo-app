@@ -1,11 +1,20 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
+
+img {
+  height: 75px;
+  width: 75px;
+  border-radius: 5px;
+  -webkit-box-shadow: -3px 5px 13px 1px rgba(0,0,0,0.58);
+  -moz-box-shadow: -3px 5px 13px 1px rgba(0,0,0,0.58);
+  box-shadow: -3px 5px 13px 1px rgba(0,0,0,0.58);
+}
+
 /* Profile Form Page*/
 form {
   font-size: 16px;
@@ -21,10 +30,6 @@ form {
   padding: 10px;
 }
 
-.button {
-width: 200px;
-font-size: 18px;
-}
 .userTypeLabel {
   padding-left: 10px;
   padding-bottom: 20px;
@@ -43,7 +48,26 @@ header {
   display:flex;
   justify-content: space-between;
 }
+
 .bleedList {
   height: 35vh;
   overflow-y: scroll;
+}
+
+ul {
+  list-style-type: lower-roman;
+  text-align: left;
+}
+
+/* Sections */
+#portfolio {
+  min-height: 500px;
+}
+
+#about {
+  min-height: 500px;
+}
+
+#contact {
+  min-height: 500px;
 }

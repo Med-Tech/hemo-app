@@ -44,7 +44,6 @@ router.get('/auth/google/callback',
 
 
 router.post('/profile', auth.ensureAuthenticated, function(request, response, next) {
-  console.log(request.body);
   db.insertAdditionalInfo(request.body).then(function() {
     if (request.body.permission === 'true') {
       response.redirect('/nurse');
