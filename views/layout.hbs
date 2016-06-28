@@ -80,58 +80,6 @@
         </a>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Bleeding Event Form</h4>
-          </div>
-          <div class="modal-body">
-
-            <!-- Add bleed event form inside modal -->
-            <form class="addevent" action="/patient/create" method="post">
-              <label for="event_date">When did the bleed occur?</label>
-              <input type="date" name="event_date" value="">
-
-              <label for="description">"Tell us what happened:"</label>
-              <input type="text" name="description" placeholder='eg. "Fell off bike" ' value="">
-
-              <label for="physical_location">Where did the bleed occur?</label>
-              <input type="text" name="physical_location" placeholder='eg "Knee", "Head"' value="">
-
-              <label for="medicine">What medicine did you take?</label>
-              <select name="medicine">
-                <option value="1">Stimate</option>
-                <option value="2">Amicar</option>
-                <option value="3">Advate</option>
-                <option value="4">Rixubus</option>
-                <option value="5">Elcotate</option>
-              </select>
-
-              <label for="dose">How much medicine did you take?</label>
-              <input type="number" name="dose" placeholder="Dose in Units" value="">
-
-              <label for="prioritize">Do you need immediate medical advice?</label>
-              <input type="radio" id= "prioritize" name="prioritize" value="true">Yes</input>
-              <input type="radio" id= "prioritize" name="prioritize" value="false">No</input>
-
-              <input type="hidden" id= "action_needed" name="action_needed" value="true">
-              <input type='hidden' id='users_id' name='users_id' value={{dbUser.user_id}}>
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Create Event</button>
-              </div>
-
-            </form>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <!-- Bootstrap Core JavaScript -->
