@@ -46,18 +46,18 @@
 
             <!-- Nurst/Patient -->
             <span class='profile'>
-              <label for='userType'>Are you a nurse or a patient?</label>
-                Nurse:
-                <input type="radio" name="permission" value="true">
-                Patient:
-                <input type="radio" name="permission" value="false">
+              <label for='userType'>Are you a patient or a provider?</label>
+								Patient:
+								<input type="radio" id='patientselect' name="permission" value="false">
+                Provider:
+                <input type="radio" id='providerselect' name="permission" value="true">
             </span>
 
             <!-- Hidden user.id -->
             <input type="hidden" name="userId" value="{{user.id}}">
 
             <!-- Diagnosis -->
-            <span class='profile'>Diagnosis:
+            <span class='profile patientinfo'>Diagnosis:
               <select name="diagnosis">
                 <option value="1">Hemophelia A</option>
                 <option value="2">Hemophelia B</option>
@@ -67,7 +67,7 @@
             </span>
 
             <!-- Medicine -->
-            <span class='profile'>Medicine:
+            <span class='profile patientinfo'>Medicine:
               <select name="medicine">
                 <option value="1">Stimate</option>
                 <option value="2">Amicar</option>
@@ -77,13 +77,19 @@
               </select>
             </span>
 
+						<span class='profile providerpassword'>
+							<label for="providerpassword">Enter Provider Access Code Here:</label>
+							<input type="text" id='providerpassword' name="providerpassword"value="">
+							<input type="button" id='verify' name="verify" value="Verify">
+						</span>
+
             <!-- Telephone -->
             <span class='profile'>
               <input type="text" name="telephone" placeholder="123-444-5555">
             </span>
 
             <!-- Submit -->
-            <input type="submit" class="button" value="Submit">
+            <input type="submit" class="button" id="profilesubmit" value="Submit">
 
           </form>
 
