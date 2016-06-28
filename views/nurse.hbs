@@ -29,16 +29,38 @@
 				<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container-fluid -->
+	</nav>
 
-
-<section id="portfolio">
+	<section id="portfolio">
 		<div class="container">
 				<div class="row">
-          <h2>Hello, {{ googleUser.displayName }}.</h2>
-          {{#each googleUser.photos}}<img src="{{ value }}" alt="userPhoto">{{/each}}
+          <h2>{{#each googleUser.photos}}<img src="{{ value }}" alt="userPhoto">
+						{{/each}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						Hello, {{ googleUser.displayName }}.
+					</h2>
+					<br><br>
+
           <!-- {{#each googleUser.emails}} {{ value }} {{/each}} -->
-          <a href="/nurse" class='button'>Home</a> |
-          <a href="/logout" class='button'>Log Out</a>
         </div>
     </div>
+
+		<br><br><br><br>
+
+		<div class="container">
+			<div class='row'>
+				<div class='col-sm-12'>
+					<ul class='all-bleeds-ul'>
+						{{#each bleed}}
+						<li class='all-bleeds text-center'>
+							<p>{{this.first_name}}</p>
+							<p>{{this.last_name}}</p>
+							<p>{{this.event_date}}</p>
+							<p>{{this.description}}</p>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+	</div>
+
 </section>

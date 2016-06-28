@@ -47,10 +47,12 @@ module.exports = {
   },
 
   findBleedIncident: function(user_id) {
-    return knex('bleed').select().where({ users_id: user_id })
-      .then(function(bleed) {
-        return bleed;
-      });
+    return knex('bleed').select().where({ users_id: user_id });
+  },
+
+  findAllBleedIncidents: function() {
+    return knex('bleed').select()
+      .join('users', 'bleed.users_id', 'users.id');
   }
 
 };
