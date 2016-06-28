@@ -3,7 +3,10 @@ var knex = require('./knex');
 module.exports = {
 
   findUserById: function(profileId) {
-    return knex('users').select().where({ googleId: profileId }).first();
+    return knex('users').select(['medicine.name as medicine', 'diagnosis.name as diagnosis', '*'])
+      .where({ googleId: profileId }).first()
+        .join('medicine', 'medicine_id', 'medicine.id')
+        .join('diagnosis', 'diagnosis_id', 'diagnosis.id');
   },
 
   createUser: function(profile) {
