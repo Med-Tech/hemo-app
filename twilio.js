@@ -18,9 +18,9 @@ module.exports = {
     return new Promise(function(resolve, reject){
       var client = new twilio.RestClient(process.env.ACCOUNT, process.env.API_KEY);
       client.sms.messages.create({
-          to:'+1' + send_to_phone_num,
-          from:process.env.TWILIO_APP_PHONE_NUM,
-          body:message_to_send
+          to: '+1' + send_to_phone_num,
+          from: process.env.TWILIO_APP_PHONE_NUM,
+          body: message_to_send
       },
       function(error, message){
         if (!error) {
@@ -28,7 +28,8 @@ module.exports = {
         } else {
                 reject(error);
         }
-      })
+      });
     });
   }
-}
+
+};
