@@ -30,3 +30,20 @@ font-size: 18px;
   padding-bottom: 20px;
   /*font-size: 18px;*/
 }
+
+/*Patient Page Styling*/
+
+header {
+  height: 10vh;
+  width: 100vw;
+  background-color: maroon;
+}
+
+.bleed {
+  display:flex;
+  justify-content: space-between;
+}
+.bleedList {
+  height: 35vh;
+  overflow-y: scroll;
+}
