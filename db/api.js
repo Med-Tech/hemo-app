@@ -63,6 +63,18 @@ module.exports = {
 
   deleteBleedEvent: function(bleed_id) {
     return knex('bleed').where({ id: bleed_id }).del();
-  }
+  },
+
+  editBleedEvent: function(body) {
+    return knex('bleed').where({ id: body.bleed_id })
+      .update({ event_date: body.event_date,
+                description: body.description,
+                physical_location: body.physical_location,
+                medicine_id: body.medicine,
+                dose: body.dose,
+                prioritize: body.prioritize,
+                action_needed: body.action_needed
+              });
+    }
 
 };
