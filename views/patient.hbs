@@ -2,18 +2,20 @@
 <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header page-scroll">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<div class="navbar-header page-scroll patientHeader">
+						<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#page-top">Med-Tech</a>
+						</button> -->
+						<a class="navbar-brand" href="#page-top"><p class="brand">
+							Hemo App
+						</p></a><a href="/logout" class='button logOutButton'>Log Out</a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 								<li class="hidden">
 										<a href="#page-top"></a>
@@ -25,18 +27,21 @@
 										<a href="/logout" class='button'>Log Out</a>
 								</li>
 						</ul>
-				</div>
+				</div> -->
 				<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container-fluid -->
 </nav>
-<section id="portfolio">
+<section id="portfolio patientPage">
 		<div class="container">
-				<div class="row">
-					{{#each googleUser.photos}}<img src="{{ value }}" alt="userPhoto">{{/each}}
-					<br><br>
-          <h2>Hello, {{ googleUser.displayName }}.</h2>
-					<br><br>
+				<div class="row patientProfile">
+					<div class="userGreeting">
+						{{#each googleUser.photos}}<img class="profilePicture" src="{{ value }}" alt="userPhoto">{{/each}}
+						<br><br>
+	          <h2>Hello, {{ googleUser.displayName }}.</h2>
+						<br><br>
+					</div>
+
           <div class='container'>
             <div class='row patientInfo'>
               <div class='col-sm-6'>
@@ -55,21 +60,17 @@
             </div>
 						<br><br><br>
 
+
 						<!-- <button>Add Bleeding Event</button> -->
 						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-							Add Bleeding Event
-						</button>
-
-						<div class="row">
-							<div class="">
-								<h3 class='col-lg-3 pull-left'>Date</h3>
-								<h3 class='col-lg-3 pull-right'>Description</h3>
-							</div>
+						<div class="buttonContainer">
+							<button type="button" class="btn btn-lg" id="addBleedingEvent" data-toggle="modal" data-target="#myModal">
+								Add Bleeding Event
+							</button>
 						</div>
 
 						<div class='row'>
-              <div class='col-sm-12'>
+              <div class='col-sm-12 bleedListContainer'>
                 <ul class='bleedList'>
 									{{#each bleed}}
 									<li class='bleed'>
@@ -135,8 +136,11 @@
               <input type="number" name="dose" placeholder="Dose in Units" min='0' value="">
 
               <label for="prioritize">Do you need immediate medical advice?</label>
-              <input type="radio" id= "prioritize" name="prioritize" value="true">Yes</input>
-              <input type="radio" id= "prioritize" name="prioritize" value="false">No</input>
+							<div class="radioContainer">
+								<input type="radio" id= "prioritize" name="prioritize" value="true">Yes</input>
+	              <input type="radio" id= "prioritize" name="prioritize" value="false">No</input>
+							</div>
+
 
               <input type="hidden" id= "action_needed" name="action_needed" value="true">
               <input type='hidden' id='users_id' name='users_id' value={{dbUser.user_id}}>

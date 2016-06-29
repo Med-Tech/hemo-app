@@ -40,17 +40,25 @@ form {
 
 
 .bleed {
-  display:flex;
-  justify-content: space-between;
-  border: 1px solid black;
-  border-radius: 8px;
-  padding: 25px;
+  /*display:flex;
+  justify-content: space-between;*/
+  box-shadow: 0px 3px 5px #888888;
+  margin: 3vh 0vh;
+  margin-left: -7vw;
+  /*border: 1px solid black;
+  border-radius: 8px;*/
+  padding: 5px 0px 0px 5px;
+}
+
+.bleed:first-child {
+  margin-bottom: 10vh;
 }
 
 .bleedList {
-  height: 35vh;
-  overflow-y: scroll;
-  padding-left: 0;
+display: flex;
+flex-direction: column-reverse;
+align-items: center;
+justify-content: center;
 }
 
 ul {
@@ -137,8 +145,13 @@ ul {
   max-height: 10vh;
   display: flex;
   align-items: center;
-  background-color: hsl(357,100%,26%);
+  background-color: hsla(357,100%,26%,0.9);
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
+
+
 
 .brand {
   color: white;
@@ -171,6 +184,9 @@ h4 {
     width:45vw;
     font-size: 3vh;
   }
+  .footer-above{
+    height: 8vh;
+  }
 }
 
 @media(max-width:600px) {
@@ -178,4 +194,71 @@ h4 {
     width:45vw;
     /*font-size: 2vh;*/
   }
+}
+
+.getStarted, #addBleedingEvent{
+  background-color: hsla(357,100%,26%, 0.8);
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+@media(max-width:850px) {
+  .userGreeting {
+    display: flex;
+    font-size: 2vmin;
+    margin-top: 5vw;
+  }
+  .profilePicture {
+    margin: 0vw 5vw;
+  }
+  .patientInfo {
+    margin-top: 5vh;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+}
+
+.addevent {
+  display: flex;
+  flex-direction: column;
+}
+
+.radioContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+
+#prioritize {
+  margin: 0 2vw;
+}
+
+.patientHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*justify-content: space-between;*/
+}
+
+@media(min-width:768px) {
+  .patientHeader {
+    display: inline;
+  }
+}
+
+.logOutButton {
+  color: white;
+  text-decoration: underline;
+  margin-bottom: 1vh;
 }
