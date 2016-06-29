@@ -59,6 +59,10 @@ module.exports = {
 
   changeBleedIncidentStatus: function(bleedId) {
     return knex('bleed').where({ id: bleedId }).update({ action_needed: 'false' });
+  },
+
+  deleteBleedEvent: function(bleed_id) {
+    return knex('bleed').where({ id: bleed_id }).del();
   }
 
 };

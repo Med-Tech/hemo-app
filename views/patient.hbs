@@ -73,7 +73,13 @@
                 <ul class='bleedList'>
 									{{#each bleed}}
 									<li class='bleed'>
-										<p>{{this.event_date}}&nbsp;<a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></p>
+										<p>{{this.event_date}}&nbsp;<a href="#">Edit</a>&nbsp;&nbsp;
+
+											<form class="delete-event-form" action="/patient/delete" method="POST">
+												<input type="hidden" name="bleed_id" value="{{this.id}}">
+												<input type="submit" value="Delete">
+											</form>
+
 										<p>{{this.description}}</p>
 									</li>
 									{{/each}}
