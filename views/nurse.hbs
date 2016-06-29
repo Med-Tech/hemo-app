@@ -29,16 +29,44 @@
 				<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container-fluid -->
+	</nav>
 
-
-<section id="portfolio">
+	<section id="portfolio">
 		<div class="container">
 				<div class="row">
-          <h2>Hello, {{ googleUser.displayName }}.</h2>
-          {{#each googleUser.photos}}<img src="{{ value }}" alt="userPhoto">{{/each}}
+          <h2>{{#each googleUser.photos}}<img src="{{ value }}" alt="userPhoto">
+						{{/each}}
+						Hello, {{ googleUser.displayName }}.
+					</h2>
+					<br>
+					<p>Below you will find all current bleed events in which need immediate response.</p>
+					<br><br>
           <!-- {{#each googleUser.emails}} {{ value }} {{/each}} -->
-          <a href="/nurse" class='button'>Home</a> |
-          <a href="/logout" class='button'>Log Out</a>
         </div>
     </div>
+
+		<br><br><br><br>
+
+		<div class="container">
+			<div class='row'>
+				<div class='col-sm-12'>
+					<ul class='all-bleeds-ul'>
+						{{#each bleed}}
+						<li class='all-bleeds text-center'>
+							<img class='user-photo' src="{{this.photo_url}}" alt="userPhoto">
+							<p>{{this.first_name}}</p>
+							<p>{{this.last_name}}</p>
+							<p>{{this.event_date}}</p>
+							<p>{{this.description}}</p>
+							<form class='nurse-blood-event' action="/nurse" method="POST">
+								<input type="hidden" name="event_id" value="{{this.bleed_id}}">
+								<input type="submit" value="Event Settled">
+							</form>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+	</div>
+
 </section>

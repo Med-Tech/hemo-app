@@ -14,7 +14,8 @@ module.exports = {
       .insert({ googleId: profile.id,
                 first_name: profile.name.givenName,
                 last_name: profile.name.familyName,
-                email: profile.emails[0].value
+                email: profile.emails[0].value,
+                photo_url: profile.photos[0].value
               });
   },
 
@@ -47,10 +48,17 @@ module.exports = {
   },
 
   findBleedIncident: function(user_id) {
-    return knex('bleed').select().where({ users_id: user_id })
-      .then(function(bleed) {
-        return bleed;
-      });
+    return knex('bleed').select().where({ users_id: user_id });
+  },
+
+  findAllBleedIncidents: function() {
+    return knex('bleed').select('bleed.id as bleed_id', '*')
+      .where({ action_needed: true })
+        .join('users', 'bleed.users_id', 'users.id');
+  },
+
+  changeBleedIncidentStatus: function(bleedId) {
+    return knex('bleed').where({ id: bleedId }).update({ action_needed: 'false' });
   }
 
 };

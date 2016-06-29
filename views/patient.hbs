@@ -57,24 +57,23 @@
 
 						<!-- <button>Add Bleeding Event</button> -->
 						<!-- Button trigger modal -->
-
 						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-						  Add Bleeding Event
+							Add Bleeding Event
 						</button>
+
+						<div class="row">
+							<div class="">
+								<h3 class='col-lg-3 pull-left'>Date</h3>
+								<h3 class='col-lg-3 pull-right'>Description</h3>
+							</div>
+						</div>
 
 						<div class='row'>
               <div class='col-sm-12'>
                 <ul class='bleedList'>
-
-                  <li class='bleed'>
-                    <p>Date</p>
-                    <p>Description</p>
-
-                  </li>
-
 									{{#each bleed}}
 									<li class='bleed'>
-										<p>{{this.event_date}}</p>
+										<p>{{this.event_date}}&nbsp;<a href="#">Edit</a>&nbsp;&nbsp;<a href="#">Delete</a></p>
 										<p>{{this.description}}</p>
 									</li>
 									{{/each}}

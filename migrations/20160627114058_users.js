@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
     table.string('email');
     table.boolean('permission');
     table.date('birthday');
+    table.string('photo_url');
     table.integer('diagnosis_id').references('diagnosis.id');
     table.integer('medicine_id').references('medicine.id');
     table.string('telephone');

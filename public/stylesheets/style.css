@@ -51,11 +51,15 @@ header {
 .bleed {
   display:flex;
   justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 25px;
 }
 
 .bleedList {
   height: 35vh;
   overflow-y: scroll;
+  padding-left: 0;
 }
 
 ul {
@@ -89,4 +93,25 @@ ul {
 
 #action_needed {
   display: none;
+}
+
+/* Nurse Page */
+
+.all-bleeds {
+  list-style-type: none;
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-box-shadow: -3px 5px 13px 5px rgba(0,0,0,0.35);
+  -moz-box-shadow: -3px 5px 13px 5px rgba(0,0,0,0.35);
+  box-shadow: -3px 5px 13px 5px rgba(0,0,0,0.35);
+  height: 300px;
+  margin: 45px;
+}
+
+.all-bleeds-ul {
+  padding: 0;
+}
+
+.user-photo {
+  margin: 15px;
 }
