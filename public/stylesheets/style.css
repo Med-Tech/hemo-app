@@ -38,15 +38,6 @@ form {
 
 /*Patient Page Styling*/
 
-header {
-  height: 10vh;
-  width: 100vw;
-  background-color: maroon;
-}
-
-.modal-content {
-
-}
 
 .bleed {
   display:flex;
@@ -69,6 +60,7 @@ ul {
 
 /* Sections */
 #portfolio {
+  height:83vh;
   min-height: 500px;
 }
 
@@ -114,4 +106,72 @@ ul {
 
 .user-photo {
   margin: 15px;
+}
+
+/* Footer */
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-above {
+  display: flex;
+  height: 10vh;
+  align-items: center;
+}
+.footer-below {
+  height: 5vh;
+}
+
+.welcomeInfo {
+  margin-top: -10vh;
+}
+
+.navbar {
+  max-height: 10vh;
+  display: flex;
+  align-items: center;
+  background-color: hsl(357,100%,26%);
+}
+
+.brand {
+  color: white;
+  font-size: 4vh;
+}
+
+h2 {
+  font-size: 5vmin;
+}
+h3 {
+  font-size: 4vmin;
+}
+
+h4 {
+  font-size: 3vmin;
+}
+
+
+@media(max-width:585px) {
+  h4 {
+    font-size: 4vmin;
+  }
+}
+
+@media(max-width:1000px) {
+  .social {
+    display: none;
+  }
+  .footer-col {
+    width:45vw;
+    font-size: 3vh;
+  }
+}
+
+@media(max-width:600px) {
+  .footer-col {
+    width:45vw;
+    /*font-size: 2vh;*/
+  }
 }
