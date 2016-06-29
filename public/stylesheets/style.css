@@ -51,11 +51,15 @@ header {
 .bleed {
   display:flex;
   justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 25px;
 }
 
 .bleedList {
   height: 35vh;
   overflow-y: scroll;
+  padding-left: 0;
 }
 
 ul {
