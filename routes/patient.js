@@ -35,7 +35,7 @@ router.get('/', auth.ensureAuthenticated, auth.isPatient, function(request, resp
 
 
 // POST to /create route to add bleed event
-router.post('/create', function(request, response, next) {
+router.post('/create', auth.ensureAuthenticated, auth.isPatient, function(request, response, next) {
   db.insertBleedEvent(request.body).then(function() {
     if (request.body.prioritize === 'true') {
       twilio.sendMessage('5152291737', 'An urgent message has been posted! Please reply immediately.');

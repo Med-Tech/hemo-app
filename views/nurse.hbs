@@ -39,7 +39,6 @@
 						Hello, {{ googleUser.displayName }}.
 					</h2>
 					<br><br>
-
           <!-- {{#each googleUser.emails}} {{ value }} {{/each}} -->
         </div>
     </div>
@@ -52,10 +51,15 @@
 					<ul class='all-bleeds-ul'>
 						{{#each bleed}}
 						<li class='all-bleeds text-center'>
+							<img class='user-photo' src="{{this.photo_url}}" alt="userPhoto">
 							<p>{{this.first_name}}</p>
 							<p>{{this.last_name}}</p>
 							<p>{{this.event_date}}</p>
 							<p>{{this.description}}</p>
+							<form class='nurse-blood-event' action="/nurse" method="POST">
+								<input type="hidden" name="event_id" value="{{this.bleed_id}}">
+								<input type="submit" value="Event Settled">
+							</form>
 						</li>
 						{{/each}}
 					</ul>
