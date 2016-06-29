@@ -67,6 +67,10 @@ ul {
   text-align: left;
 }
 
+.red {
+  color: red;
+}
+
 /* Sections */
 #portfolio {
   min-height: 500px;

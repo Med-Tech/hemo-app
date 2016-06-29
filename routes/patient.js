@@ -36,4 +36,20 @@ router.post('/create', auth.ensureAuthenticated, auth.isPatient, function(reques
   response.redirect('/patient');
 });
 
+// POST to /delete for patients to delete their bleed event
+router.post('/delete', function(request, response, next) {
+  db.deleteBleedEvent(request.body.bleed_id).then(function() {
+    response.redirect('/patient');
+  });
+});
+
+// POST to patient/edit for editing blood events
+router.post('/edit', function(request, response, next) {
+  db.editBleedEvent(request.body).then(function() {
+    response.redirect('/patient');
+  });
+});
+
+
+
 module.exports = router;
