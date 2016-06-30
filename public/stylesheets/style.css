@@ -242,7 +242,18 @@ footer {
   bottom: 0;
   width: 100vw;
 }
+.contactLink:hover {
+  cursor: pointer;
+}
 
+.aboutLink:hover {
+  cursor: pointer;
+}
+
+#contactModal .btn, #aboutModal .btn {
+  background-color: #AE0D15;
+  color: white;
+}
 .addevent {
   display: flex;
   flex-direction: column;
