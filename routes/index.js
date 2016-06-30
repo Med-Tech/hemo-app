@@ -9,11 +9,6 @@ router.get('/', function(request, response) {
   response.render('index', { user: request.user });
 });
 
-// GET login page
-router.get('/login', function(request, response) {
-  response.render('login', { user: request.user });
-});
-
 // GET profile page to fill out other data
 router.get('/profile', auth.ensureAuthenticated, function(request, response, next) {
   response.render('profile', { user: request.user });
@@ -27,7 +22,7 @@ router.get('/auth/google',
 // If successful auth - redirects to home page, if not - redirects to /login
 router.get('/auth/google/callback',
   auth.passport.authenticate('google', {
-    failureRedirect: '/login'
+    failureRedirect: '/'
   }),
   function(request, response) {
     // Authenticated successfully
