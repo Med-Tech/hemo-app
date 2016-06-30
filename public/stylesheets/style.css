@@ -38,8 +38,48 @@ form {
 
 /*Patient Page Styling*/
 
+/*.all-bleeds {
+  box-shadow: 0px 3px 5px #888888;
+  margin: 2vh 0vh;
+  margin-left: -7vw;
+  padding: 5px 0px 0px 5px;
+  width: 80vw;
+  height: 12vh;
+  display: flex;
+}*/
 
-.bleed {
+@media(max-width:600px) {
+  .nurseInfo {
+    width:90vw;
+  }
+  #bleedUserPhoto {
+    display: none;
+  }
+  #bleedFirstName, #bleedLastName, #bleedEventDate, #bleedDescription, #eventSettled {
+    font-size: 3vw;
+  }
+  #bleedFirstName, #bleedLastName, #bleedEventDate, #bleedDescription {
+    width: 15vw;
+  }
+  #bleedLastName {
+    margin-top: -1vh;
+  }
+  .eventDate {
+    margin-top: 3vh;
+  }
+}
+
+#eventSettled {
+  background-color: hsla(357,100%,26%, 0.3);
+  margin-right: 2vw;
+}
+
+.allEventsButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.bleed, .all-bleeds {
   display:flex;
   justify-content: space-between;
   align-items: center;
@@ -51,15 +91,18 @@ form {
   height: 12vh;
 }
 
-.bleed:first-child {
+.bleed:first-child{
   margin-bottom: 10vh;
 }
 
-.bleedList {
+.bleedList, .all-bleeds-ul{
 display: flex;
 flex-direction: column-reverse;
 align-items: center;
 justify-content: center;
+}
+.all-bleeds-ul {
+  margin-top: -10vh;
 }
 
 ul {
@@ -119,7 +162,7 @@ ul {
 
 /* Nurse Page */
 
-.all-bleeds {
+/*.all-bleeds {
   list-style-type: none;
   border: 2px solid black;
   border-radius: 8px;
@@ -132,7 +175,7 @@ ul {
 
 .all-bleeds-ul {
   padding: 0;
-}
+}*/
 
 .user-photo {
   margin: 15px;
@@ -163,7 +206,7 @@ ul {
   max-height: 10vh;
   display: flex;
   align-items: center;
-  background-color: hsla(357,100%,26%,0.9);
+  background-color: hsl(357,100%,26%);
   position: fixed;
   top: 0;
   width: 100vw;
@@ -209,7 +252,7 @@ h4 {
 
 
 
-.getStarted, #addBleedingEvent{
+.getStarted, #addBleedingEvent, #viewAllBleedingEvents{
   background-color: hsla(357,100%,26%, 0.8);
   color: white;
   text-shadow: none;
@@ -368,5 +411,38 @@ footer {
 }
 
 .all-bleeds {
-  background-color: red;
+
+}
+
+.nurseInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+}
+
+@media(max-width:768px){
+  .nurseInfo {
+    margin-left: 5vw;
+  }
+  #nurseAlert {
+    font-size: 4vw;
+  }
+
+  #welcomeMessage {
+    margin-top: -4vh;
+  }
+}
+
+.userGreeting {
+  position: fixed;
+  top: 10vh;
+  background-color: white;
+  z-index: 99;
+  margin-top: 0vh;
+  padding-top: 5vh;
+}
+
+.patientInfo {
+  margin-top: 20vh;
 }
