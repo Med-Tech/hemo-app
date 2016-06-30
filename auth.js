@@ -45,7 +45,7 @@ module.exports = {
     if (request.isAuthenticated()) {
       return next();
     }
-    response.redirect('/login');
+    response.redirect('/');
   },
 
   isNurse: function(request, response, next) {

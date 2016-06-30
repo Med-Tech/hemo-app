@@ -15,11 +15,11 @@ router.get('/profile', auth.ensureAuthenticated, function(request, response, nex
 });
 
 
-// GET route for when you click on login - passport authenticates through google
+// GET route for when you click on get started - passport authenticates through google
 router.get('/auth/google',
   auth.passport.authenticate('google', { scope: ['openid email profile'] }));
 
-// If successful auth - redirects to home page, if not - redirects to /login
+// If successful auth - redirects to home page, if not - redirects to /
 router.get('/auth/google/callback',
   auth.passport.authenticate('google', {
     failureRedirect: '/'
