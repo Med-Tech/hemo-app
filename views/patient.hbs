@@ -9,9 +9,15 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 						</button> -->
-						<a class="navbar-brand" href="#page-top"><p class="brand">
-							Hemo App
-						</p></a><a href="/logout" class='button logOutButton'>Log Out</a>
+						<div class="leftHeader">
+							<a class="navbar-brand" href="#page-top"><p class="brand">
+								Hemo App
+							</p></a>
+						</div>
+						<div class="rightHeader">
+							<a href="/logout" class='button logOutButton'>Log Out</a>
+						</div>
+
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,22 +80,26 @@
                 <ul class='bleedList'>
 									{{#each bleed}}
 									<li class='bleed'>
-										<p>{{this.event_date}}&nbsp;&nbsp;
-											<!-- Edit button -->
-											<button type="button" class="btn" data-toggle="modal" data-target="#editModal"
-												data-description='{{this.description}}'
-												data-physical-location='{{this.physical_location}}'
-												data-dose='{{this.dose}}'
-												data-bleed-id='{{this.id}}'>
-												Edit Event
-											</button>
-											<!-- Delete button (form) -->
-											<form class="delete-event-form" action="/patient/delete" method="POST">
-												<input type="hidden" name="bleed_id" value="{{this.id}}">
-												<input type="submit" value="Delete">
-											</form>
+										<p class="eventDate">{{this.event_date}}&nbsp;&nbsp;</p>
+										<p class="eventDescription">{{this.description}}</p>
 
-										<p>{{this.description}}</p>
+											<!-- Edit button -->
+											<div class="editDeleteContainer">
+												<button type="button" class="btn editDeleteButton" data-toggle="modal" data-target="#editModal"
+													data-description='{{this.description}}'
+													data-physical-location='{{this.physical_location}}'
+													data-dose='{{this.dose}}'
+													data-bleed-id='{{this.id}}'>
+													Edit Event
+												</button>
+												<!-- Delete button (form) -->
+												<form class="delete-event-form" action="/patient/delete" method="POST">
+													<input type="hidden" name="bleed_id" value="{{this.id}}">
+													<input class="btn editDeleteButton" type="submit" value="Delete">
+												</form>
+											</div>
+
+
 									</li>
 									{{/each}}
 
