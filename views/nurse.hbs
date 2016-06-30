@@ -69,17 +69,19 @@
 				<h4 class="modal-title" id="myModalLabel">All Past Bleed Events</h4>
 			</div>
 			<div class="modal-body">
-				{{#each allBleed}}
-				<li class='all-bleeds-modal text-center'>
+				<ul class='all-bleeds-modal-ul'>
+					{{#each allBleed}}
+					<li class='all-bleeds-modal text-center'>
 
-					<div id="bleedUserFullNameModal">
-						<p id="bleedFirstNameModal">{{this.first_name}}</p>
-						<p id="bleedLastNameModal">{{this.last_name}}</p>
-					</div>
-					<p id="bleedEventDateModal">{{this.event_date}}</p>
-					<p id="bleedDescriptionModal">{{this.description}}</p>
-				</li>
-				{{/each}}
+						<div id="bleedUserFullNameModal">
+							<p id="bleedFirstNameModal">{{this.first_name}}</p>
+							<p id="bleedLastNameModal">{{this.last_name}}</p>
+						</div>
+						<p id="bleedEventDateModal">{{this.event_date}}</p>
+						<p id="bleedDescriptionModal">{{this.description}}</p>
+					</li>
+					{{/each}}
+				</ul>
 			</div>
 		</div>
 	</div>
