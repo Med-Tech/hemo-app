@@ -14,11 +14,12 @@ router.get('/', auth.ensureAuthenticated, auth.isNurse, function(request, respon
   .then(function(allBleed) {
     db.findAllBleedIncidentsActionTrue()
   .then(function(bleed) {
-    // Format each bleed event date
+    // Format each bleed event date (shown always)
     bleed.forEach(function(bleedEventObj) {
       var string = bleedEventObj.event_date.toString();
       bleedEventObj.event_date = splice(string, 16, 24);
     });
+    // Format each bleed event date (shown when all-past-bleed-events button is clicked)
     allBleed.forEach(function(bleedEventObj) {
       var string = bleedEventObj.event_date.toString();
       bleedEventObj.event_date = splice(string, 16, 24);

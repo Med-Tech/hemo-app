@@ -26,6 +26,7 @@ form {
   padding-left: 10px;
   font-size: 14px;
 }
+
 .profile {
   display: block;
   padding: 10px;
@@ -45,6 +46,15 @@ form {
   background-color: hsla(131, 100%, 21%, 0.25);
 }
 
+#profilesubmit {
+  display: none;
+}
+
+#check-mark {
+  color: green;
+  display: none;
+}
+
 /*Patient Page Styling*/
 
 /*.all-bleeds {
@@ -61,18 +71,23 @@ form {
   .nurseInfo {
     width:90vw;
   }
+
   #bleedUserPhoto {
     display: none;
   }
+
   #bleedFirstName, #bleedLastName, #bleedEventDate, #bleedDescription, #eventSettled {
     font-size: 3vw;
   }
+
   #bleedFirstName, #bleedLastName, #bleedEventDate, #bleedDescription {
     width: 15vw;
   }
+
   #bleedLastName {
     margin-top: -1vh;
   }
+
   .eventDate {
     margin-top: 3vh;
   }
@@ -87,8 +102,6 @@ form {
   }
 }
 
-
-
 #eventSettled {
   background-color: hsla(357,100%,26%, 0.3);
   margin-right: 2vw;
@@ -98,11 +111,13 @@ form {
   display: flex;
   justify-content: center;
 }
+
 .modal-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .bleed, .all-bleeds, .all-bleeds-modal {
   display:flex;
   justify-content: space-between;
@@ -115,12 +130,14 @@ form {
   height: 12vh;
   background-color: white;
 }
+
 @media(min-width:768px) {
   .all-bleeds-modal {
     width: 500px;
     padding-right: 30px;
   }
 }
+
 .bleed:first-child{
   margin-bottom: 10vh;
 }
@@ -131,6 +148,7 @@ flex-direction: column-reverse;
 align-items: center;
 justify-content: center;
 }
+
 .all-bleeds-ul {
   margin-top: -10vh;
 }
@@ -161,12 +179,12 @@ ul {
     background-image: none;
     text-shadow: none;
   }
-
 }
 
 .modal-backdrop {
   z-index: -1;
 }
+
 #about {
   min-height: 500px;
 }
@@ -225,6 +243,7 @@ ul {
   height: 10vh;
   align-items: center;
 }
+
 .footer-below {
   height: 5vh;
 }
@@ -243,8 +262,6 @@ ul {
   width: 100vw;
 }
 
-
-
 .brand {
   color: white;
   font-size: 4vh;
@@ -253,6 +270,7 @@ ul {
 h2 {
   font-size: 5vmin;
 }
+
 h3 {
   font-size: 4vmin;
 }
@@ -260,7 +278,6 @@ h3 {
 h4 {
   font-size: 3vmin;
 }
-
 
 @media(max-width:585px) {
   h4 {
@@ -281,8 +298,6 @@ h4 {
   }
 }
 
-
-
 .getStarted, #addBleedingEvent, #viewAllBleedingEvents{
   background-color: hsla(357,100%,26%, 0.8);
   color: white;
@@ -297,6 +312,7 @@ h4 {
 ul {
   list-style: none;
 }
+
 @media(max-width:850px) {
   .userGreeting {
     display: flex;
@@ -321,6 +337,7 @@ footer {
   bottom: 0;
   width: 100vw;
 }
+
 .contactLink:hover {
   cursor: pointer;
 }
@@ -412,6 +429,7 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
 @media(max-width:600px) {
   .footer-col {
     width:45vw;
@@ -426,6 +444,7 @@ footer {
     font-size: 4vw;
   }
 }
+
 .editDeleteButton {
   background-color: hsla(357,100%,26%, 0.3);
   margin-bottom: 5px;

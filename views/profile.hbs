@@ -1,45 +1,38 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<!-- <div class="navbar-header page-scroll">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-						</button> -->
 						<a class="navbar-brand" href="#page-top"><p class="brand">
 							HemophiliApp
 						</p></a>
 				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-right">
-								<li class="hidden">
-										<a href="#page-top"></a>
-								</li>
-								<li class="page-scroll">
-										<a href="#portfolio">Portfolio</a>
-								</li>
-								<li class="page-scroll">
-										<a href="/logout" class='button'>Log Out</a>
-								</li>
-						</ul>
-				</div> -->
-				<!-- /.navbar-collapse -->
 		</div>
-		<!-- /.container-fluid -->
 </nav>
 
 <section id="portfolio">
 		<div class="container">
 				<div class="row">
-
+					<!-- Displayname -->
           <h3 class = "profileIntro">{{user.displayName}}, please fill out remaining information! Thank you.</h3>
 
           <form class="profileForm" method="POST" action="/profile">
+
+						<!-- Nurst/Patient -->
+						<span class='profile'>
+							<label for='userType'>Are you a patient or a provider?</label>
+								<div class="permissionRadio">
+									Patient:
+									<input type="radio" id='patientselect' name="permission" value="false">
+									Provider:
+									<input type="radio" id='providerselect' name="permission" value="true">
+								</div>
+						</span>
+
+						<span class='profile providerpassword' id="patientInformation">
+							<label for="providerpassword">Enter Provider Access Code Here:</label>
+							<input type="text" id='providerpassword' name="providerpassword" value="">&nbsp;&nbsp;&nbsp;
+							<span id='check-mark' class='glyphicon glyphicon-ok'></span>
+						</span>
+
             <!-- Birthday -->
             <span class='profile'>
               <label for='birthdate'>Birthday: </label>
@@ -51,17 +44,6 @@
 							<label for="telephone">Please enter your phone number:</label>
 							<input type="text" name="telephone" placeholder="123-444-5555" id="telephone">
 						</span>
-
-            <!-- Nurst/Patient -->
-            <span class='profile'>
-              <label for='userType'>Are you a patient or a provider?</label>
-								<div class="permissionRadio">
-									Patient:
-									<input type="radio" id='patientselect' name="permission" value="false">
-	                Provider:
-	                <input type="radio" id='providerselect' name="permission" value="true">
-								</div>
-            </span>
 
             <!-- Hidden user.id -->
             <input type="hidden" name="userId" value="{{user.id}}">
@@ -87,16 +69,10 @@
               </select>
             </span>
 
-						<span class='profile providerpassword' id="patientInformation">
-							<label for="providerpassword">Enter Provider Access Code Here:</label>
-							<input type="text" id='providerpassword' name="providerpassword" value="">
-						</span>
-
             <!-- Submit -->
             <input type="submit" class="button" id="profilesubmit" value="Submit">
 
           </form>
-
         </div>
       </div>
     </section>
