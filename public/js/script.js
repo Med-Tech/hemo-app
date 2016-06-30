@@ -14,17 +14,17 @@ $(document).ready(function(){
     $('#profilesubmit').css('color','gray');
   });
 
-  $('#providerpassword').keyup(function() {
+  $('#providerpassword').blur(function() {
     if($('#providerpassword').val()== 1234){
-      $('#profilesubmit').prop('disabled', false);
+      $('#profilesubmit').show();
       $('#profilesubmit').css('color','black');
       $('#providerpassword').removeClass('red-border');
-      $('#providerpassword').addClass('green-border');
+      $('#check-mark').show();
     } else {
-      $('#profilesubmit').attr('disabled', true);
+      $('#profilesubmit').hide();
       $('#profilesubmit').css('color','grey');
-      $('#providerpassword').removeClass('green-border');
       $('#providerpassword').addClass('red-border');
+
     }
   });
 
@@ -52,13 +52,20 @@ $(document).ready(function(){
     currentTarget.find("input[value='" + prioritize + "']").prop('checked', true);
     currentTarget.find('input[name="bleed_id"]').val(id);
   });
-
-  $('.contactLink').on('click', function(){
-    $('#contactModal').modal('show')
+  // Same as above but for pre-populating the original add-bleed event with medicine the patient takes
+  $('#myModal').on('show.bs.modal', function(event) {
+    var medicine = $(event.relatedTarget).data('medicine');
+    $(event.currentTarget).find('select[name="medicine"]').find("option[value='" + medicine + "']").prop('selected', 'selected');
   });
 
+  // Contact info modal in the footer
+  $('.contactLink').on('click', function(){
+    $('#contactModal').modal('show');
+  });
+
+  // About info modal in the footer
   $('.aboutLink').on('click', function(){
-    $('#aboutModal').modal('show')
+    $('#aboutModal').modal('show');
   });
 
 });

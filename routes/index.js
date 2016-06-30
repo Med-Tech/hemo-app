@@ -14,12 +14,11 @@ router.get('/profile', auth.ensureAuthenticated, function(request, response, nex
   response.render('profile', { user: request.user });
 });
 
-
 // GET route for when you click on get started - passport authenticates through google
 router.get('/auth/google',
   auth.passport.authenticate('google', { scope: ['openid email profile'] }));
 
-// If successful auth - redirects to home page, if not - redirects to /
+// If successful auth - redirects to home page, if not - redirects to '/'
 router.get('/auth/google/callback',
   auth.passport.authenticate('google', {
     failureRedirect: '/'
@@ -37,7 +36,7 @@ router.get('/auth/google/callback',
     });
   });
 
-
+// POST to addtional information profile page
 router.post('/profile', auth.ensureAuthenticated, function(request, response, next) {
   db.insertAdditionalInfo(request.body).then(function() {
     if (request.body.permission === 'true') {
