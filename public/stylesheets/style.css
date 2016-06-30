@@ -254,6 +254,11 @@ footer {
   background-color: #AE0D15;
   color: white;
 }
+
+#phoneNumber {
+  color: blue;
+}
+
 .addevent {
   display: flex;
   flex-direction: column;
