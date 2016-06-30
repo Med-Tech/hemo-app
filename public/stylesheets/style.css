@@ -36,6 +36,14 @@ form {
   /*font-size: 18px;*/
 }
 
+.red-border {
+  background-color: hsla(0, 100%, 63%, 0.4);
+}
+
+.green-border {
+  background-color: hsla(131, 100%, 21%, 0.25);
+}
+
 /*Patient Page Styling*/
 
 /*.all-bleeds {
