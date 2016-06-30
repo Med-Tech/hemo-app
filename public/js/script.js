@@ -53,4 +53,12 @@ $(document).ready(function(){
     currentTarget.find('input[name="bleed_id"]').val(id);
   });
 
+  $('.contactLink').on('click', function(){
+    $('#contactModal').modal('show')
+  });
+
+  $('.aboutLink').on('click', function(){
+    $('#aboutModal').modal('show')
+  });
+
 });
