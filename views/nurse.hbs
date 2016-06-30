@@ -9,7 +9,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 						</button> -->
-						<a class="navbar-brand" href="#page-top"><p class="brand">Hemo App</p></a>
+						<a class="navbar-brand" href="#page-top"><p class="brand">HemophiliApp</p></a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,18 +36,17 @@
 				<div class="row patientProfile">
 					<div class="userGreeting">
 						{{#each googleUser.photos}}<img class="profilePicture" src="{{ value }}" alt="userPhoto">{{/each}}
-						<h2>Hello, {{ googleUser.displayName }}.</h2>
+						<h2 class="nurseWelcome">Hello, {{ googleUser.displayName }}.</h2>
 					</div>
         </div>
-				<div class='row patientInfo'>
-					<p>Below you will find all current bleed events in which need immediate response.</p>
-				</div>
     </div>
+		<div class='row nurseInfo'>
+			<p id='nurseAlert'>Below you will find all pending bleeds.<br>
+			Please contact these patients immediately.</p>
+		</div>
 
 		<!-- All-events modal -->
-		<button type="button" class="btn btn-lg" data-toggle="modal" data-target="#all-events-modal" id="viewAllBleedingEvents">
-			View All Past Bleed Events
-		</button>
+
 
 		<br><br><br><br>
 
@@ -57,14 +56,16 @@
 					<ul class='all-bleeds-ul'>
 						{{#each bleed}}
 						<li class='all-bleeds text-center'>
-							<img class='user-photo' src="{{this.photo_url}}" alt="userPhoto">
-							<p>{{this.first_name}}</p>
-							<p>{{this.last_name}}</p>
-							<p>{{this.event_date}}</p>
-							<p>{{this.description}}</p>
+							<img class='user-photo' id="bleedUserPhoto" src="{{this.photo_url}}" alt="userPhoto">
+							<div id="bleedUserFullName">
+								<p id="bleedFirstName">{{this.first_name}}</p>
+								<p id="bleedLastName">{{this.last_name}}</p>
+							</div>
+							<p id="bleedEventDate">{{this.event_date}}</p>
+							<p id="bleedDescription">{{this.description}}</p>
 							<form class='nurse-blood-event' action="/nurse" method="POST">
 								<input type="hidden" name="event_id" value="{{this.bleed_id}}">
-								<input type="submit" value="Event Settled">
+								<input class="btn" id="eventSettled" type="submit" value="Event Settled">
 							</form>
 						</li>
 						{{/each}}
@@ -72,6 +73,12 @@
 				</div>
 			</div>
 	</div>
+	<div class="allEventsButtonContainer">
+		<button type="button" class="btn btn-lg" data-toggle="modal" data-target="#all-events-modal" id="viewAllBleedingEvents">
+			View All Past Bleed Events
+		</button>
+	</div>
+
 
 </section>
 
