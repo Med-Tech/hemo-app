@@ -54,6 +54,11 @@ module.exports = {
 
   findAllBleedIncidents: function() {
     return knex('bleed').select('bleed.id as bleed_id', '*')
+      .join('users', 'bleed.users_id', 'users.id');
+  },
+
+  findAllBleedIncidentsActionTrue: function() {
+    return knex('bleed').select('bleed.id as bleed_id', '*')
       .where({ action_needed: true })
         .join('users', 'bleed.users_id', 'users.id');
   },

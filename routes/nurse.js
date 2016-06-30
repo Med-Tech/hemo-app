@@ -11,6 +11,8 @@ router.get('/', auth.ensureAuthenticated, auth.isNurse, function(request, respon
     db.findUserById(request.user.id)
   .then(function(user) {
     db.findAllBleedIncidents()
+  .then(function(allBleed) {
+    db.findAllBleedIncidentsActionTrue()
   .then(function(bleed) {
     // Format each bleed event date
     bleed.forEach(function(bleedEventObj) {
@@ -19,8 +21,10 @@ router.get('/', auth.ensureAuthenticated, auth.isNurse, function(request, respon
     });
     response.render('nurse', { dbUser: user,
                                googleUser: request.user,
-                               bleed: bleed
+                               bleed: bleed,
+                               allBleed: allBleed
                              });
+      });
     });
   });
 });
