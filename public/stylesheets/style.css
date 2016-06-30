@@ -428,6 +428,10 @@ footer {
   #nurseAlert {
     font-size: 4vw;
   }
+
+  #welcomeMessage {
+    margin-top: -4vh;
+  }
 }
 
 .userGreeting {
