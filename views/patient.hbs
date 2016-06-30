@@ -11,7 +11,7 @@
 						</button> -->
 						<div class="leftHeader">
 							<a class="navbar-brand" href="#page-top"><p class="brand">
-								Hemo App
+								HemophiliApp
 							</p></a>
 						</div>
 						<div class="rightHeader">
@@ -84,8 +84,8 @@
 										<p class="eventDescription">{{this.description}}</p>
 
 											<!-- Edit button -->
-
-											<button type="button" class="btn" data-toggle="modal" data-target="#editModal"
+										<div class="editDeleteContainer">
+											<button type="button" class="btn editDeleteButton" data-toggle="modal" data-target="#editModal"
 												data-event-date='{{this.event_date}}'
 												data-description='{{this.description}}'
 												data-physical-location='{{this.physical_location}}'
@@ -96,12 +96,12 @@
 												Edit Event
 											</button>
 											<!-- Delete button (form) -->
-											<form class="delete-event-form" action="/patient/delete" method="POST">
+											<form class="delete-event-form \" action="/patient/delete" method="POST">
 												<input type="hidden" name="bleed_id" value="{{this.id}}">
-												<input type="submit" value="Delete">
+												<input class="btn editDeleteButton" type="submit" value="Delete">
 											</form>
+										</div>
 
-										<p>{{this.description}}</p>
 									</li>
 									{{/each}}
 
