@@ -46,6 +46,11 @@
         </div>
     </div>
 
+		<!-- All-events modal -->
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#all-events-modal">
+			View All Past Bleed Events
+		</button>
+
 		<br><br><br><br>
 
 		<div class="container">
@@ -71,3 +76,33 @@
 	</div>
 
 </section>
+
+<div class="modal fade" id="all-events-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">All Past Bleed Events</h4>
+			</div>
+			<div class="modal-body">
+				{{#each allBleed}}
+
+
+					<h6><img src="{{this.photo_url}}" alt="Patient-Photo"></h6>
+					<br>
+
+					<h4><b>Name:</b></h4>
+					<h6>{{this.last_name}}, {{this.first_name}}</h6>
+
+					<h4><b>Description:</b></h4>
+					<h6>{{this.description}}</h6>
+
+					<h4><b>Physical Location:</b></h4>
+					<h6>{{this.physical_location}}</h6>
+
+					<hr></hr>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</div>
