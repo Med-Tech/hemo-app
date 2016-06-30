@@ -51,6 +51,7 @@ form {
 }
 
 #check-mark {
+  color: green;
   display: none;
 }
 
