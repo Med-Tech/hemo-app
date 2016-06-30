@@ -266,6 +266,11 @@ h4 {
   text-shadow: none;
 }
 
+#viewAllBleedingEvents {
+  margin-top: 1vh;
+  margin-bottom: 8vh;
+}
+
 ul {
   list-style: none;
 }

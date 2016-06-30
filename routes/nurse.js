@@ -19,6 +19,10 @@ router.get('/', auth.ensureAuthenticated, auth.isNurse, function(request, respon
       var string = bleedEventObj.event_date.toString();
       bleedEventObj.event_date = splice(string, 16, 24);
     });
+    allBleed.forEach(function(bleedEventObj) {
+      var string = bleedEventObj.event_date.toString();
+      bleedEventObj.event_date = splice(string, 16, 24);
+    });
     response.render('nurse', { dbUser: user,
                                googleUser: request.user,
                                bleed: bleed,
