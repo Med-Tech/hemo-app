@@ -87,7 +87,7 @@ form {
   justify-content: center;
 }
 
-.bleed, .all-bleeds {
+.bleed, .all-bleeds, .all-bleeds-modal {
   display:flex;
   justify-content: space-between;
   align-items: center;
@@ -401,7 +401,11 @@ footer {
 .editDeleteButton {
   background-color: hsla(357,100%,26%, 0.3);
   margin-bottom: 5px;
-  width:inherit;
+  width:24vw;
+}
+
+#editButton {
+  background-color: hsla(217,89%,73%, 0.7);
 }
 
 #addBleedingEvent {
@@ -465,8 +469,15 @@ footer {
   z-index: 99;
   margin-top: 0vh;
   padding-top: 5vh;
+  width: 100vw;
 }
 
 .patientInfo {
   margin-top: 20vh;
+}
+
+@media(min-width: 850px){
+  .patientInfo{
+    margin-top: 25vh;
+  }
 }

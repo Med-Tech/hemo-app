@@ -96,21 +96,15 @@
 			</div>
 			<div class="modal-body">
 				{{#each allBleed}}
-
-
-					<h6><img src="{{this.photo_url}}" alt="Patient-Photo"></h6>
-					<br>
-
-					<h4><b>Name:</b></h4>
-					<h6>{{this.last_name}}, {{this.first_name}}</h6>
-
-					<h4><b>Description:</b></h4>
-					<h6>{{this.description}}</h6>
-
-					<h4><b>Physical Location:</b></h4>
-					<h6>{{this.physical_location}}</h6>
-
-					<hr></hr>
+				<li class='all-bleeds-modal text-center'>
+					
+					<div id="bleedUserFullNameModal">
+						<p id="bleedFirstNameModal">{{this.first_name}}</p>
+						<p id="bleedLastNameModal">{{this.last_name}}</p>
+					</div>
+					<p id="bleedEventDateModal">{{this.event_date}}</p>
+					<p id="bleedDescriptionModal">{{this.description}}</p>
+				</li>
 				{{/each}}
 			</div>
 		</div>
