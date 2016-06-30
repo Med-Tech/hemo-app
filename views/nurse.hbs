@@ -3,17 +3,17 @@
 		<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header page-scroll">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#page-top">Med-Tech</a>
+						</button> -->
+						<a class="navbar-brand" href="#page-top"><p class="brand">Hemo App</p></a>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 								<li class="hidden">
 										<a href="#page-top"></a>
@@ -24,7 +24,7 @@
 								<li class="page-scroll">
 										<a href="/logout" class='button'>Log Out</a>
 								</li>
-						</ul>
+						</ul> -->
 				</div>
 				<!-- /.navbar-collapse -->
 		</div>
@@ -33,14 +33,15 @@
 
 	<section id="portfolio">
 		<div class="container">
-				<div class="row">
-          <h2>{{#each googleUser.photos}}<img src="{{ value }}" alt="userPhoto">
-						{{/each}}
-						Hello, {{ googleUser.displayName }}.
-					</h2>
-					<br>
-					<p>Below you will find all current bleed events in which need immediate response.</p>
-					<br><br>
+				<div class="row nurseProfile">
+					<div class="userGreeting">
+						{{#each googleUser.photos}}<img class="profilePicture" src="{{ value }}" alt="userPhoto">{{/each}}
+						<h2>Hello, {{ googleUser.displayName }}.</h2>
+						<br>
+						<p>Below you will find all current bleed events in which need immediate response.</p>
+						<br><br>
+					</div>
+
           <!-- {{#each googleUser.emails}} {{ value }} {{/each}} -->
         </div>
     </div>
