@@ -1,4 +1,5 @@
 var knex = require('./knex');
+var splice = require('string-splice');
 
 module.exports = {
 
@@ -75,6 +76,13 @@ module.exports = {
                 prioritize: body.prioritize,
                 action_needed: body.action_needed
               });
-    }
+    },
+
+  formatBleedDate: function(bleed) {
+    return bleed.forEach(function(bleedEventObj) {
+    var string = bleedEventObj.event_date.toString();
+    bleedEventObj.event_date = splice(string, 16, 24);
+    });
+  }
 
 };

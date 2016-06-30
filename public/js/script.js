@@ -24,21 +24,23 @@ $(document).ready(function(){
     }
   });
 
-  //triggered when modal is about to be shown
+  // Triggered when modal is about to be shown
   $('#editModal').on('show.bs.modal', function(event) {
-
-      //get data-id attribute of the clicked element
+      // Get data-id attribute of the clicked element
+      var event_date = $(event.relatedTarget).data('event-date');
       var description = $(event.relatedTarget).data('description');
       var physical_location = $(event.relatedTarget).data('physical-location');
       var dose = $(event.relatedTarget).data('dose');
       var id = $(event.relatedTarget).data('bleed-id');
-
-      //populate the input area
+      // Format event date with slice and moment.js
+      var dateStr = event_date.toString().slice(3);
+      event_date = moment(dateStr, 'MMM-DD-YYYY').format('YYYY-MM-DD');
+      // Populate the input area
+      $(event.currentTarget).find('input[name=event_date]').val(event_date);
       $(event.currentTarget).find('input[name="description"]').val(description);
       $(event.currentTarget).find('input[name="physical_location"]').val(physical_location);
       $(event.currentTarget).find('input[name="dose"]').val(dose);
       $(event.currentTarget).find('input[name="bleed_id"]').val(id);
-
   });
 
 });
