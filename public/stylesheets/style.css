@@ -1,5 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: hsl(180,3%,95%);
 }
 
 a {
@@ -75,7 +76,18 @@ form {
   .eventDate {
     margin-top: 3vh;
   }
+
+  #bleedFirstNameModal, #bleedLastNameModal, #bleedEventDateModal, #bleedDescriptionModal {
+    font-size: 4vw;
+    width: 27vw;
+  }
+
+  #bleedLastNameModal{
+    margin-top: -1vh;
+  }
 }
+
+
 
 #eventSettled {
   background-color: hsla(357,100%,26%, 0.3);
@@ -86,7 +98,11 @@ form {
   display: flex;
   justify-content: center;
 }
-
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .bleed, .all-bleeds, .all-bleeds-modal {
   display:flex;
   justify-content: space-between;
@@ -97,13 +113,19 @@ form {
   padding: 5px 0px 0px 5px;
   width: 80vw;
   height: 12vh;
+  background-color: white;
 }
-
+@media(min-width:768px) {
+  .all-bleeds-modal {
+    width: 500px;
+    padding-right: 30px;
+  }
+}
 .bleed:first-child{
   margin-bottom: 10vh;
 }
 
-.bleedList, .all-bleeds-ul{
+.bleedList, .all-bleeds-ul, .all-bleeds-modal-ul {
 display: flex;
 flex-direction: column-reverse;
 align-items: center;
@@ -137,8 +159,9 @@ ul {
 @media(max-width: 768px) {
   .background-img {
     background-image: none;
-    text-shadow: .5px .5px 1px #ababab;
+    text-shadow: none;
   }
+
 }
 
 .modal-backdrop {
@@ -470,7 +493,7 @@ footer {
 .userGreeting {
   position: fixed;
   top: 10vh;
-  background-color: white;
+  background-color: hsl(180,3%,95%);
   z-index: 99;
   margin-top: 0vh;
   padding-top: 5vh;
