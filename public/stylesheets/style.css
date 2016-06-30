@@ -196,7 +196,7 @@ h4 {
 
 
 
-.getStarted, #addBleedingEvent{
+.getStarted, #addBleedingEvent, #viewAllBleedingEvents{
   background-color: hsla(357,100%,26%, 0.8);
   color: white;
 }
@@ -354,5 +354,5 @@ footer {
 }
 
 .all-bleeds {
-  background-color: red;
+
 }

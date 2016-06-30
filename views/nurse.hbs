@@ -31,23 +31,21 @@
 		<!-- /.container-fluid -->
 	</nav>
 
-	<section id="portfolio">
+	<section id="portfolio patientPage">
 		<div class="container">
-				<div class="row nurseProfile">
+				<div class="row patientProfile">
 					<div class="userGreeting">
 						{{#each googleUser.photos}}<img class="profilePicture" src="{{ value }}" alt="userPhoto">{{/each}}
 						<h2>Hello, {{ googleUser.displayName }}.</h2>
-						<br>
-						<p>Below you will find all current bleed events in which need immediate response.</p>
-						<br><br>
 					</div>
-
-          <!-- {{#each googleUser.emails}} {{ value }} {{/each}} -->
         </div>
+				<div class='row patientInfo'>
+					<p>Below you will find all current bleed events in which need immediate response.</p>
+				</div>
     </div>
 
 		<!-- All-events modal -->
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#all-events-modal">
+		<button type="button" class="btn btn-lg" data-toggle="modal" data-target="#all-events-modal" id="viewAllBleedingEvents">
 			View All Past Bleed Events
 		</button>
 
