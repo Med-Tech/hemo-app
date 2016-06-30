@@ -76,10 +76,13 @@
 										<p>{{this.event_date}}&nbsp;&nbsp;
 											<!-- Edit button -->
 											<button type="button" class="btn" data-toggle="modal" data-target="#editModal"
+												data-event-date='{{this.event_date}}'
 												data-description='{{this.description}}'
 												data-physical-location='{{this.physical_location}}'
 												data-dose='{{this.dose}}'
-												data-bleed-id='{{this.id}}'>
+												data-bleed-id='{{this.id}}'
+												data-medicine='{{this.medicine_id}}'
+												data-prioritize='{{this.prioritize}}'>
 												Edit Event
 											</button>
 											<!-- Delete button (form) -->
@@ -166,7 +169,7 @@
 
 						<form class="editevent" action="/patient/edit" method="POST">
 							<label for="event_date" class='red'>When did the bleed occur?</label>
-              <input type="date" name="event_date" value="">
+              <input type="date" name="event_date" value="{{this.event_date}}">
 
               <label for="description">Tell us what happened:</label>
               <input type="text" name="description" placeholder='eg. "Fell off bike" ' value="{{this.description}}">
