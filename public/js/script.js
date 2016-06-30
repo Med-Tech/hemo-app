@@ -3,15 +3,13 @@ $(document).ready(function(){
   $('#patientselect').on('click', function() {
     $('.patientinfo').show();
     $('.providerpassword').hide();
-    $('#profilesubmit').removeAttr('disabled');
-    $('#profilesubmit').css('color','black');
+    $('#profilesubmit').show();
   });
 
   $('#providerselect').on('click', function() {
     $('.providerpassword').show();
     $('.patientinfo').hide();
-    $('#profilesubmit').attr('disabled','disabled');
-    $('#profilesubmit').css('color','gray');
+    $('#profilesubmit').hide();
   });
 
   $('#providerpassword').blur(function() {
@@ -24,7 +22,6 @@ $(document).ready(function(){
       $('#profilesubmit').hide();
       $('#profilesubmit').css('color','grey');
       $('#providerpassword').addClass('red-border');
-
     }
   });
 

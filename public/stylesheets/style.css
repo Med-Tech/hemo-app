@@ -46,10 +46,6 @@ form {
   background-color: hsla(131, 100%, 21%, 0.25);
 }
 
-#profilesubmit {
-  display: none;
-}
-
 #check-mark {
   color: green;
   display: none;
