@@ -77,6 +77,19 @@ ul {
   min-height: 500px;
 }
 
+.background-img {
+  background-image: url('../images/office.jpg');
+  background-size: cover;
+  text-shadow: 2px 2px 2px #ababab;
+}
+
+@media(max-width: 768px) {
+  .background-img {
+    background-image: none;
+    text-shadow: .5px .5px 1px #ababab;
+  }
+}
+
 .modal-backdrop {
   z-index: -1;
 }
@@ -199,6 +212,7 @@ h4 {
 .getStarted, #addBleedingEvent{
   background-color: hsla(357,100%,26%, 0.8);
   color: white;
+  text-shadow: none;
 }
 
 ul {
