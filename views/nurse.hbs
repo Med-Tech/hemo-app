@@ -17,15 +17,24 @@
 		<div class="container">
 				<div class="row patientProfile">
 					<div class="userGreeting">
-						{{#each googleUser.photos}}<img class="profilePicture" src="{{ value }}" alt="userPhoto">{{/each}}
-						<h2 class="nurseWelcome">Hello, {{ googleUser.displayName }}.</h2>
+						<div class="profilePictureContainer" id="nurseProfilePicture">
+							{{#each googleUser.photos}}<img class="profilePicture" src="{{ value }}" alt="userPhoto">{{/each}}
+						</div>
+						<div class="profileInfoContainer">
+							<div class="welcomeMessageContainer">
+								<h2 class="nurseWelcome">Hello, {{ googleUser.displayName }}.</h2>
+							</div>
+							<div class="additionalProfileContainer">
+								<div class='row nurseInfo'>
+									<p id='nurseAlert'>Below you will find all pending bleeds.<br>
+									Please contact these patients immediately.</p>
+								</div>
+							</div>
+						</div>
 					</div>
         </div>
     </div>
-		<div class='row nurseInfo'>
-			<p id='nurseAlert'>Below you will find all pending bleeds.<br>
-			Please contact these patients immediately.</p>
-		</div>
+
 
 		<!-- All-events modal -->
 
