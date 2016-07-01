@@ -5,7 +5,7 @@ var db = require('../db/api');
 
 
 // GET root page
-router.get('/', function(request, response) {
+router.get('/', auth.ifLoggedInCantGoHome, function(request, response, next) {
   response.render('index', { user: request.user });
 });
 
