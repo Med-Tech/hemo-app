@@ -213,6 +213,15 @@ ul {
   display: none;
 }
 
+.all-bleeds:last-child {
+  margin-top: 20vh;
+}
+
+@media(max-width: 600px) {
+  .all-bleeds:last-child {
+    margin-top: 15vh;
+  }
+}
 /* Nurse Page */
 
 /*.all-bleeds {
@@ -477,6 +486,12 @@ footer {
   font-size: 5vmin;
 }
 
+@media(min-width: 1000px) {
+  #extraProfileInfoIntro{
+    margin-top: -5vh;
+  }
+}
+
 #birthday, #diagnosis, #medicine, #telephone, #providerpassword {
   border: 1px solid black;
   text-align: right;
@@ -486,27 +501,29 @@ footer {
   text-align: center;
 }
 
-.all-bleeds {
-
-}
 
 .nurseInfo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20vh;
+  margin-left: 0vw;
 }
 
 @media(max-width:768px){
   .nurseInfo {
-    margin-left: 5vw;
+    margin-left: -18vw;
   }
   #nurseAlert {
-    font-size: 4vw;
+    font-size: 2.5vw;
   }
 
   #welcomeMessage {
     margin-top: -4vh;
+  }
+
+  #nurseProfilePicture {
+    margin-left: 0vw;
+    margin-bottom: 2vw;
   }
 }
 
