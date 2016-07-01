@@ -52,7 +52,9 @@ $(document).ready(function(){
   // Same as above but for pre-populating the original add-bleed event with medicine the patient takes
   $('#myModal').on('show.bs.modal', function(event) {
     var medicine = $(event.relatedTarget).data('medicine');
+    var date = moment().format('YYYY-MM-DD');
     $(event.currentTarget).find('select[name="medicine"]').find("option[value='" + medicine + "']").prop('selected', 'selected');
+    $(event.currentTarget).find('input[name=event_date]').val(date);
   });
 
   // Contact info modal in the footer

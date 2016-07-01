@@ -114,6 +114,10 @@ form {
   justify-content: center;
 }
 
+.modal-grey {
+  background-color: hsl(180,3%,95%);
+}
+
 .bleed, .all-bleeds, .all-bleeds-modal {
   display:flex;
   justify-content: space-between;
@@ -519,6 +523,9 @@ footer {
   margin-top: 0vh;
   padding-top: 5vh;
   width: 100vw;
+  -moz-box-shadow:0 5px 4px rgba(182, 182, 182, 0.50);
+  -webkit-box-shadow: 0 5px 4px rgba(182, 182, 182, 0.50);
+  box-shadow: 0 5px 4px rgba(182, 182, 182, 0.50);
 }
 
 .patientInfo {

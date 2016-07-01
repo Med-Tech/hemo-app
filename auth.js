@@ -48,9 +48,17 @@ module.exports = {
     response.redirect('/');
   },
 
+  ifLoggedInCantGoHome: function(request, response, next) {
+    if ( request.isAuthenticated() ) {
+      response.redirect('/nurse');
+    } else {
+      next();
+    }
+  },
+
   isNurse: function(request, response, next) {
     db.findUserById(request.user.id).then(function(user) {
-      if (user.permission === true) {
+      if ( user.permission === true ) {
         next();
       } else {
         response.redirect('/patient');
