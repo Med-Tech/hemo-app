@@ -1,6 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: hsl(180,3%,92%);
+  background-color: hsl(180,3%,95%);
 }
 
 a {
@@ -112,11 +112,10 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: hsl(180,3%,92%);
 }
 
-.modal-header {
-  background-color: hsl(180,3%,92%);
+.modal-grey {
+  background-color: hsl(180,3%,95%);
 }
 
 .bleed, .all-bleeds, .all-bleeds-modal {
@@ -513,7 +512,7 @@ footer {
 .userGreeting {
   position: fixed;
   top: 10vh;
-  background-color: hsl(180,3%,92%);
+  background-color: hsl(180,3%,95%);
   z-index: 99;
   margin-top: 0vh;
   padding-top: 5vh;
