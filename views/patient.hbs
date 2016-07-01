@@ -16,43 +16,50 @@
 </nav>
 <section id="portfolio patientPage">
 		<div class="container">
-				<div class="row patientProfile">
-					<div class="userGreeting">
-						{{#each googleUser.photos}}<img class="profilePicture" src="{{ value }}" alt="userPhoto">{{/each}}
-						<br><br>
-	          <h2>Hello, {{ googleUser.displayName }}.</h2>
-						<br><br>
-					</div>
+				<div class="patientProfile">
+					<div>
+						<div class="userGreeting">
+							<div class="profilePictureContainer">
+									{{#each googleUser.photos}}<img class="profilePicture" src="{{ value }}" alt="userPhoto">{{/each}}
+							</div>
+							<div class="profileInfoContainer">
+								<div class="welcomeMessageContainer">
+									<h2>Hello, {{ googleUser.displayName }}.</h2>
+								</div>
+								<div class="additionalProfileContainer">
+									<div>
+										<ul class="nonEssentialInfo">
+											<li>Birthday: {{dbUser.birthday}}</li>
+											<li>Phone Number: {{dbUser.telephone}}</li>
+											<li>Email: {{dbUser.email}}</li>
+										</ul>
+									</div>
+									<div>
+										<ul class="essentialInfo">
+											<li>Diagnosis: {{dbUser.diagnosis}}</li>
+											<li>Current Medicine: {{dbUser.medicine}}</li>
+										</ul>
+									</div>
+									<div class="buttonContainer">
+										<button type="button" class="btn btn-lg" id="addBleedingEvent" data-toggle="modal" data-target="#myModal"
+										data-medicine='{{dbUser.medicine_id}}'>
+											Add Bleeding Event
+										</button>
+									</div>
+								</div>
+							</div>
 
-          <div class='container'>
-            <div class='row patientInfo'>
-              <div class='col-sm-6'>
-                <ul>
-                  <li>Birthday: {{dbUser.birthday}}</li>
-                  <li>Phone Number: {{dbUser.telephone}}</li>
-                  <li>Email: {{dbUser.email}}</li>
-                </ul>
-              </div>
-              <div class='col-sm-6'>
-                <ul>
-                  <li>Diagnosis: {{dbUser.diagnosis}}</li>
-                  <li>Current Medicine: {{dbUser.medicine}}</li>
-                </ul>
-              </div>
-            </div>
+						</div>
+
+
 
 						<br><br><br>
 
 						<!-- <button>Add Bleeding Event</button> -->
 						<!-- Button trigger modal -->
-						<div class="buttonContainer">
-							<button type="button" class="btn btn-lg" id="addBleedingEvent" data-toggle="modal" data-target="#myModal"
-							data-medicine='{{dbUser.medicine_id}}'>
-								Add Bleeding Event
-							</button>
-						</div>
 
-						<div class='row'>
+
+						<div>
               <div class='col-sm-12 bleedListContainer'>
                 <ul class='bleedList'>
 									{{#each bleed}}

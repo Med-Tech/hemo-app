@@ -142,6 +142,10 @@ form {
   margin-bottom: 10vh;
 }
 
+.bleed:last-child {
+  margin-top: 13vh;
+}
+
 .bleedList, .all-bleeds-ul, .all-bleeds-modal-ul {
 display: flex;
 flex-direction: column-reverse;
@@ -313,19 +317,8 @@ ul {
   list-style: none;
 }
 
-@media(max-width:850px) {
-  .userGreeting {
-    display: flex;
-    font-size: 2vmin;
-    margin-top: 5vw;
-  }
-  .profilePicture {
-    margin: 0vw 5vw;
-  }
-  .patientInfo {
-    margin-top: 5vh;
-  }
-}
+
+
 
 .buttonContainer {
   display: flex;
@@ -388,7 +381,7 @@ footer {
     justify-content: space-between;
   }
   .leftHeader, .rightHeader {
-    width: 40vw;
+    width: 30vw;
   }
   .leftHeader {
     display: flex;
@@ -399,6 +392,8 @@ footer {
     display: flex;
     justify-content: flex-end;
   }
+
+  .
 }
 
 .logOutButton {
@@ -516,8 +511,10 @@ footer {
 }
 
 .userGreeting {
+  display: flex;
   position: fixed;
   top: 10vh;
+  left: 0vw;
   background-color: hsl(180,3%,95%);
   z-index: 99;
   margin-top: 0vh;
@@ -527,6 +524,21 @@ footer {
   -webkit-box-shadow: 0 5px 4px rgba(182, 182, 182, 0.50);
   box-shadow: 0 5px 4px rgba(182, 182, 182, 0.50);
 }
+
+.profilePictureContainer {
+  margin-left: 8vw;
+}
+
+.profileInfoContainer {
+  margin-left: 3vw;
+}
+.welcomeMessageContainer{
+  margin-bottom: 2vh;
+}
+.buttonContainer {
+  margin-left: 5vw;
+}
+
 
 .patientInfo {
   margin-top: 20vh;
@@ -540,4 +552,49 @@ footer {
 
 #profilesubmit {
   margin-left: 2vw;
+}
+
+.profileInfoContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.additionalProfileContainer {
+  display: flex;
+}
+
+@media(max-width:850px) {
+  .userGreeting {
+    font-size: 2vmin;
+    position: fixed;
+    top:5vh;
+  }
+  .profilePicture {
+    margin: 0vw 5vw;
+  }
+  .patientInfo {
+    margin-top: 5vh;
+  }
+
+  .nonEssentialInfo {
+    display:none;
+  }
+
+  .bleed:last-child {
+    margin-top: 10vh;
+  }
+
+  .essentialInfo {
+    width: 30vw;
+    margin-left: -10vw;
+    font-weight: bold;
+    font-size: 2.5vw;
+  }
+  #addBleedingEvent {
+    font-size: 3vw;
+    margin-top: .5vh;
+    height: 5vh;
+    width: 34vw;
+
+  }
 }
