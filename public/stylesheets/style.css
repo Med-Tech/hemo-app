@@ -368,9 +368,14 @@ footer {
 
 .patientHeader {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  /*justify-content: space-between;*/
+  /*flex-direction: column;*/
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.leftHeader {
+  margin-left: -8vw;
+  margin-right: 10vw;
 }
 
 @media(min-width:768px) {
@@ -384,6 +389,7 @@ footer {
   .leftHeader {
     display: flex;
     justify-content: flex-start;
+    margin-left: 0vw;
   }
   .rightHeader {
     display: flex;
