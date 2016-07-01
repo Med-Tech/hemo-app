@@ -294,7 +294,7 @@ h4 {
   }
 }
 
-.getStarted, #addBleedingEvent, #viewAllBleedingEvents{
+.getStarted, #addBleedingEvent, #viewAllBleedingEvents, #profilesubmit {
   background-color: hsla(357,100%,26%, 0.8);
   color: white;
   text-shadow: none;
@@ -458,18 +458,18 @@ footer {
 .profileForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 7vh;
 }
 
 .profile {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
 }
-
 .profileIntro {
   margin-top: -15vh;
+  font-size: 5vmin;
 }
 
 #birthday, #diagnosis, #medicine, #telephone, #providerpassword {
@@ -523,4 +523,8 @@ footer {
   .patientInfo{
     margin-top: 25vh;
   }
+}
+
+#profilesubmit {
+  margin-left: 2vw;
 }
