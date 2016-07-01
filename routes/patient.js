@@ -26,18 +26,20 @@ router.get('/', auth.ensureAuthenticated, auth.isPatient, function(request, resp
 // POST to /create route to add bleed event
 router.post('/create', auth.ensureAuthenticated, auth.isPatient, function(request, response, next) {
   db.insertBleedEvent(request.body).then(function() {
-    if (request.body.prioritize === 'true') {
-      twilio.sendMessage('5152291737', 'An urgent message has been posted! Please reply immediately.');
-      twilio.sendMessage('4843547333', 'An urgent message has been posted! Please reply immediately.');
-      twilio.sendMessage('3035478715', 'An urgent message has been posted! Please reply immediately.');
-      twilio.sendMessage('9252853344', 'An urgent message has been posted! Please reply immediately.');
-    } else {
-      twilio.sendMessage('5152291737', 'A non-urgent message has been posted. Please reply soon.');
-      twilio.sendMessage('4843547333', 'A non-urgent message has been posted. Please reply soon.');
-      twilio.sendMessage('3035478715', 'A non-urgent message has been posted. Please reply soon.');
-      twilio.sendMessage('9252853344', 'A non-urgent message has been posted. Please reply soon.');
-    }
-  });
+    var urgent = 'An urgent message has been posted! Please reply immediately.';
+    var non_urgent = 'A non-urgent message has been posted. Please reply soon.';
+      if (request.body.prioritize === 'true') {
+        twilio.sendMessage('5152291737', urgent);
+        twilio.sendMessage('4843547333', urgent);
+        twilio.sendMessage('3035478715', urgent);
+        twilio.sendMessage('9252853344', urgent);
+      } else {
+        twilio.sendMessage('5152291737', non_urgent);
+        twilio.sendMessage('4843547333', non_urgent);
+        twilio.sendMessage('3035478715', non_urgent);
+        twilio.sendMessage('9252853344', non_urgent);
+      }
+    });
   response.redirect('/patient');
 });
 
